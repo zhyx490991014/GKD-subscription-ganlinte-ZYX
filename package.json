@@ -81,6 +81,5 @@
   "dependencies": {
     "picocolors": "1.1.1",
     "typescript-eslint": "^8.55.0"
-  },
-  "private": true
+  }
 }

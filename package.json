@@ -49,11 +49,12 @@
     "@gkd-kit/api": "0.8.0",
     "@gkd-kit/define": "0.0.1",
     "@gkd-kit/tools": "^0.8.0",
+    "@types/bun": "latest",
     "@types/node": "25.2.3",
     "@typescript-eslint/eslint-plugin": "8.55.0",
     "@typescript-eslint/parser": "8.48.1",
     "esbuild": "0.25.11",
-    "eslint": "10.0.0",
+    "eslint": "^9.20.0",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-unused-imports": "4.4.1",
     "json5": "2.2.3",
@@ -78,6 +79,8 @@
     "node": ">=22"
   },
   "dependencies": {
-    "picocolors": "1.1.1"
-  }
+    "picocolors": "1.1.1",
+    "typescript-eslint": "^8.55.0"
+  },
+  "private": true
 }

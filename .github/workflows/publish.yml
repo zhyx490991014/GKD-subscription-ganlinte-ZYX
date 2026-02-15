@@ -1,0 +1,43 @@
+name: publish
+
+on:
+  push:
+    tags:
+      - 'v*'  # 当 push v* tag 时自动触发
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write     # 用于 Trusted Publishing OIDC
+      contents: write     # 用于创建 Release
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          registry-url: 'https://registry.npmjs.org/'  # 关键：触发 OIDC 认证
+
+      - name: Publish to NPM
+        run: |
+          npm publish --access public --provenance
+          bun -e "import('@gkd-kit/tools').then((m) => m.syncNpmmirror());"
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ github.ref_name }}  # 自动取当前 tag，如 v1.0.70
+          name: Release ${{ github.ref_name }}
+          body_path: ./dist/CHANGELOG.md
+          files: |
+            ./dist/ganlin_gkd.json5
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

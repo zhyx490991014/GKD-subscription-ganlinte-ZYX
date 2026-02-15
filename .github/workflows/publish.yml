@@ -26,6 +26,15 @@ jobs:
           node-version: '20'
           registry-url: 'https://registry.npmjs.org/'  # 关键：触发 OIDC 认证
 
+      - name: Debug OIDC claims
+        run: |
+          echo "Actor: ${{ github.actor }}"
+          echo "Ref: ${{ github.ref }}"
+          echo "Ref name: ${{ github.ref_name }}"
+          echo "Workflow: ${{ github.workflow }}"
+          echo "Workflow ref: ${{ github.workflow_ref }}"
+          echo "Repository: ${{ github.repository }}"
+
       - name: Publish to NPM
         run: |
           npm publish --access public --provenance

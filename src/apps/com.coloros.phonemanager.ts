@@ -21,7 +21,7 @@ export default defineGkdApp({
     },
     {
       key: 4,
-      name: '局部广告 - 卡片广告',
+      name: '局部广告-卡片广告',
       desc: '点击关闭',
       rules: [
         {
@@ -36,7 +36,7 @@ export default defineGkdApp({
     },
     {
       key: 5,
-      name: '功能类 - 风险应用提示',
+      name: '功能类-风险应用提示',
       desc: '点击忽略',
       rules: [
         {

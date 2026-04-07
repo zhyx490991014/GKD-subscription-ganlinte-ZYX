@@ -6,7 +6,7 @@ export default defineGkdApp({
   groups: [
     {
       key: 1,
-      name: '功能类 - 自动安装应用',
+      name: '功能类-自动安装应用',
       desc: '点击 [继续安装]',
       fastQuery: true,
       rules: [
@@ -42,8 +42,21 @@ export default defineGkdApp({
       ],
     },
     {
+      key: 3,
+      name: '全屏广告',
+      desc: '安装完成后弹出的安装增强防护推广弹窗，点击 [取消] 关闭',
+      fastQuery: true,
+      activityIds: '.model.finish.InstallFinishActivity',
+      rules: [
+        {
+          matches: '@[text="取消"] + [text="开启"]',
+          snapshotUrls: 'https://i.gkd.li/i/26185929',
+        },
+      ],
+    },
+    {
       key: 2,
-      name: '功能类 - 安装中高风险应用',
+      name: '功能类-安装中高风险应用',
       fastQuery: true,
       activityIds: '.model.guide.ui.InstallGuideActivity',
       rules: [

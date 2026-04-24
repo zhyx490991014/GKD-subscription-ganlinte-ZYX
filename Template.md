@@ -1,4 +1,4 @@
-# @ganlinte/GKD-subscription
+# @zhyx1996/GKD-subscription-ganlinte-ZYX
 
 ## 使用前须知
 
@@ -14,35 +14,27 @@
 
 ## GKD 订阅链接
 
-|                                             Github                                             |                                       gitmirror                                        |                                              npmmirror                                               |                                           jsDelivr                                           |
-| :--------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------: |
-| [链接](https://raw.githubusercontent.com/ganlinte/GKD-subscription/main/dist/ganlin_gkd.json5) | [链接](https://raw.gitmirror.com/ganlinte/GKD-subscription/main/dist/ganlin_gkd.json5) | [链接](https://registry.npmmirror.com/@ganlinte/gkd-subscription/latest/files/dist/ganlin_gkd.json5) | [链接](https://cdn.jsdelivr.net/npm/@ganlinte/gkd-subscription@latest/dist/ganlin_gkd.json5) |
+运行仓库中的 `build_release` 工作流后，可使用以下订阅地址：
+
+|                                                 Github                                                  |                                            gitmirror                                             |
+| :-----------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------: |
+| [链接](https://raw.githubusercontent.com/zhyx1996/GKD-subscription-ganlinte-ZYX/main/dist/zhyx1996_gkd.json5) | [链接](https://raw.gitmirror.com/zhyx1996/GKD-subscription-ganlinte-ZYX/main/dist/zhyx1996_gkd.json5) |
 
 - Github
 ```txt
-https://raw.githubusercontent.com/ganlinte/GKD-subscription/main/dist/ganlin_gkd.json5
+https://raw.githubusercontent.com/zhyx1996/GKD-subscription-ganlinte-ZYX/main/dist/zhyx1996_gkd.json5
 ```
 
 - gitmirror
 ```txt
-https://raw.gitmirror.com/ganlinte/GKD-subscription/main/dist/ganlin_gkd.json5
-```
-
-- npmmirrow
-```txt
-https://registry.npmmirror.com/@ganlinte/gkd-subscription/latest/files/dist/ganlin_gkd.json5
-```
-
-- jsDeliver
-```txt
-https://cdn.jsdelivr.net/npm/@ganlinte/gkd-subscription@latest/dist/ganlin_gkd.json5
+https://raw.gitmirror.com/zhyx1996/GKD-subscription-ganlinte-ZYX/main/dist/zhyx1996_gkd.json5
 ```
 
 ## GKD 订阅仓库
 
-|                        Github                        |                              npmjs                               |                            npmmirror                             |                                jsDelivr                                 |
-| :--------------------------------------------------: | :--------------------------------------------------------------: | :--------------------------------------------------------------: | :---------------------------------------------------------------------: |
-| [链接](https://github.com/ganlinte/GKD-subscription) | [链接](https://www.npmjs.com/package/@ganlinte/gkd-subscription) | [链接](https://npmmirror.com/package/@ganlinte/gkd-subscription) | [链接](https://www.jsdelivr.com/package/npm/@ganlinte/gkd-subscription) |
+|                           Github                           |
+| :--------------------------------------------------------: |
+| [链接](https://github.com/zhyx1996/GKD-subscription-ganlinte-ZYX) |
 
 ## 说明
 
@@ -70,4 +62,4 @@ https://cdn.jsdelivr.net/npm/@ganlinte/gkd-subscription@latest/dist/ganlin_gkd.j
 
 ### 感谢以下开发者的贡献
 
-![img](https://contrib.rocks/image?repo=ganlinte/GKD-subscription&_v=--VERSION--)
+![img](https://contrib.rocks/image?repo=zhyx1996/GKD-subscription-ganlinte-ZYX&_v=--VERSION--)

@@ -1,17 +1,17 @@
 {
-  "name": "@ganlinte/gkd-subscription",
+  "name": "gkd-subscription-zhyx1996-zyx",
   "type": "module",
   "version": "2.0.66",
   "gkd": {
     "outDir": "dist",
-    "file": "ganlin_gkd.json5",
-    "versionFile": "ganlin_gkd.version.json5",
+    "file": "zhyx1996_gkd.json5",
+    "versionFile": "zhyx1996_gkd.version.json5",
     "changelog": "CHANGELOG.md",
     "README.md": "README.md"
   },
-  "main": "./dist/ganlin_gkd.json5",
-  "unpkg": "./dist/ganlin_gkd.json5",
-  "jsdelivr": "./dist/ganlin_gkd.json5",
+  "main": "./dist/zhyx1996_gkd.json5",
+  "unpkg": "./dist/zhyx1996_gkd.json5",
+  "jsdelivr": "./dist/zhyx1996_gkd.json5",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
@@ -63,15 +63,15 @@
     "simple-git-hooks": "2.13.1",
     "typescript": "5.9.2"
   },
-  "author": "ganlinte",
+  "author": "zhyx1996",
   "license": "MIT",
-  "homepage": "https://github.com/ganlinte/gkd-subscription#readme",
+  "homepage": "https://github.com/zhyx1996/GKD-subscription-ganlinte-ZYX#readme",
   "bugs": {
-    "url": "https://github.com/ganlinte/gkd-subscription/issues"
+    "url": "https://github.com/zhyx1996/GKD-subscription-ganlinte-ZYX/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ganlinte/gkd-subscription.git"
+    "url": "git+https://github.com/zhyx1996/GKD-subscription-ganlinte-ZYX.git"
   },
   "packageManager": "bun@1.2.21",
   "engineStrict": true,

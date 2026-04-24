@@ -1,12 +1,15 @@
 name: build_release
 
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
 
 jobs:
   build_release:
     runs-on: ubuntu-latest
     permissions:
-      id-token: write
       contents: write
     steps:
       - uses: actions/checkout@v4
@@ -27,35 +30,35 @@ jobs:
           echo "version=${version}" >> "$GITHUB_OUTPUT"
           bun -e "import('@gkd-kit/tools').then((m) => m.updatePkgVersion());"
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '24'
-          registry-url: 'https://registry.npmjs.org/'
-
-      - name: Publish to NPM
+      - name: Check generated changes
+        id: changes
         run: |
-          npm publish --access public --provenance
-          bun -e "import('@gkd-kit/tools').then((m) => m.syncNpmmirror());"
+          if [[ -n "$(git status --porcelain)" ]]; then
+            echo "has_changes=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_changes=false" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Git commit & Push
-        id: commit
+        if: steps.changes.outputs.has_changes == 'true'
         run: |
           git config --local user.email github-actions[bot]@users.noreply.github.com
           git config --local user.name github-actions[bot]
           git add .
-          git commit -m "chore: v${{ steps.version.outputs.version }}"
+          git commit -m "chore: v${{ steps.version.outputs.version }} [skip ci]"
           # 推送代码和 Tag
-          git push origin main
+          git push origin HEAD:${{ github.ref_name }}
           git tag v${{ steps.version.outputs.version }}
           git push origin v${{ steps.version.outputs.version }}
 
       - name: Create GitHub Release
+        if: steps.changes.outputs.has_changes == 'true'
         uses: softprops/action-gh-release@v1
         with:
           tag_name: v${{ steps.version.outputs.version }}
           name: Release ${{ steps.version.outputs.version }}
           body_path: ./dist/CHANGELOG.md
           files: |
-            ./dist/ganlin_gkd.json5
+            ./dist/zhyx1996_gkd.json5
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
